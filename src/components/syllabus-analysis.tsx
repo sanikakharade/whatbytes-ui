@@ -10,12 +10,12 @@ export function SyllabusAnalysis({ items }: SyllabusAnalysisProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Syllabus Wise Analysis</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Syllabus Wise Analysis</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4 md:space-y-6">
         {items.map((item) => (
           <div key={item.topic} className="space-y-2">
-            <div className="flex justify-between text-sm">
+            <div className="flex justify-between text-sm md:text-base">
               <span className="text-gray-500">{item.topic}</span>
               <span className="font-medium text-blue-600">{item.score}%</span>
             </div>

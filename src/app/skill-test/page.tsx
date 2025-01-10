@@ -32,6 +32,7 @@ export default function SkillTestPage() {
     })
 
     const [isUpdateDialogOpen, setIsUpdateDialogOpen] = useState(false)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
     const handleUpdateScores = (data: UpdateScoreData) => {
         setTestData({
@@ -43,27 +44,27 @@ export default function SkillTestPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <Header />
-            <div className="flex">
-                <Sidebar />
-                <main className="flex-1 p-6">
-                    <h1 className="text-2xl font-semibold mb-6">Skill Test</h1>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div className="lg:col-span-2 space-y-6">
-                            <div className="bg-white p-6 rounded-lg border">
-                                <div className="flex justify-between items-start">
-                                    <div className="flex gap-4">
-                                        <Image src="/html5.svg" alt="HTML5" width={48} height={48} />
+        <div className="min-h-screen bg-gray-50 flex flex-col">
+            <Header onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+            <div className="flex flex-1 overflow-hidden">
+                <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+                <main className="flex-1 p-4 md:p-6 overflow-y-auto">
+                    <h1 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Skill Test</h1>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+                        <div className="lg:col-span-2 space-y-4 md:space-y-6">
+                            <div className="bg-white p-4 md:p-6 rounded-lg border">
+                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                    <div className="flex items-center gap-4">
+                                        <Image src="/html5.svg" alt="HTML5" width={48} height={48} className="w-10 h-10 md:w-12 md:h-12" />
                                         <div>
-                                            <h2 className="text-xl font-semibold">{testData.title}</h2>
-                                            <p className="text-gray-500">
+                                            <h2 className="text-lg md:text-xl font-semibold">{testData.title}</h2>
+                                            <p className="text-sm md:text-base text-gray-500">
                                                 Questions: {testData.questions} | Duration: {testData.duration} mins |
                                                 Submitted on {testData.submittedDate}
                                             </p>
                                         </div>
                                     </div>
-                                    <Button onClick={() => setIsUpdateDialogOpen(true)}>
+                                    <Button onClick={() => setIsUpdateDialogOpen(true)} className="w-full md:w-auto">
                                         Update
                                     </Button>
                                 </div>

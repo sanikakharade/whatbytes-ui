@@ -23,14 +23,14 @@ interface ComparisonGraphProps {
 export function ComparisonGraph({ percentile, averagePercentile }: ComparisonGraphProps) {
   return (
     <Card>
-      <CardContent className="p-6">
-        <h3 className="font-semibold mb-4">Comparison Graph</h3>
-        <p className="text-gray-600 mb-6">
+      <CardContent className="p-4 md:p-6">
+        <h3 className="font-semibold mb-4 text-lg">Comparison Graph</h3>
+        <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
           You scored {percentile}% percentile which is{' '}
           {percentile > averagePercentile ? 'higher' : 'lower'} than the average
           percentile {averagePercentile}% of all the engineers who took this assessment
         </p>
-        <div className="h-[200px]">
+        <div className="h-[200px] md:h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />

@@ -16,16 +16,16 @@ export function QuickStatistics({
 }: QuickStatisticsProps) {
   return (
     <Card>
-      <CardContent className="p-6">
-        <h3 className="font-semibold mb-4">Quick Statistics</h3>
-        <div className="grid grid-cols-3 gap-4">
+      <CardContent className="p-4 md:p-6">
+        <h3 className="font-semibold mb-4 text-lg">Quick Statistics</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="flex items-center gap-4">
             <div className="p-2 bg-yellow-50 rounded-lg">
               <Trophy className="w-6 h-6 text-yellow-500" />
             </div>
             <div>
-              <div className="text-2xl font-semibold">{rank}</div>
-              <div className="text-sm text-gray-500">YOUR RANK</div>
+              <div className="text-xl md:text-2xl font-semibold">{rank}</div>
+              <div className="text-xs md:text-sm text-gray-500">YOUR RANK</div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -33,8 +33,8 @@ export function QuickStatistics({
               <Target className="w-6 h-6 text-blue-500" />
             </div>
             <div>
-              <div className="text-2xl font-semibold">{percentile}%</div>
-              <div className="text-sm text-gray-500">PERCENTILE</div>
+              <div className="text-xl md:text-2xl font-semibold">{percentile}%</div>
+              <div className="text-xs md:text-sm text-gray-500">PERCENTILE</div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -42,10 +42,10 @@ export function QuickStatistics({
               <CheckCircle className="w-6 h-6 text-green-500" />
             </div>
             <div>
-              <div className="text-2xl font-semibold">
+              <div className="text-xl md:text-2xl font-semibold">
                 {correctAnswers} / {totalQuestions}
               </div>
-              <div className="text-sm text-gray-500">CORRECT ANSWERS</div>
+              <div className="text-xs md:text-sm text-gray-500">CORRECT ANSWERS</div>
             </div>
           </div>
         </div>
